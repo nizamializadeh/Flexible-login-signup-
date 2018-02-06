@@ -1,0 +1,27 @@
+﻿@model  WebApplication9.Models.Wiewmodel
+@{
+    ViewBag.Title = "Index";
+}
+
+<form action="/Admin/Index" method="post">
+    <select name="usr">
+        @foreach (var item in Model.Ie_user)
+        {
+            <option value="@item.id">@item.Name</option>
+        }
+    </select>
+    <select name="Rol">
+        @foreach (var item in Model.Ie_role)
+        {
+            <option value="@item.id">@item.RoleName</option>
+        }
+    </select>
+    <select name="table">
+        @foreach (var item in Model.Ie_table)
+        {
+            <option value="@item.id">@item.Table_Name</option>
+        }
+    </select>
+    <button class="btn btn-success">Add</button>
+</form>
+
